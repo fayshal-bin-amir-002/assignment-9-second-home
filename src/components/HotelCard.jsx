@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
 import { BsCurrencyDollar } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const HotelCard = ({ card }) => {
 
     const { img, estate_title, segment_name, description, price, status, area, location, facilities } = card;
 
     return (
-        <div className="shadow-lg border rounded-md duration-300 hover:shadow-sm flex flex-col justify-between animate__animated animate__delay-1s animate__zoomIn" >
+        <div className="shadow-lg border rounded-md duration-300 hover:shadow-sm flex flex-col justify-between" data-aos="zoom-in" data-aos-duration="1000">
             <div>
                 <img src={img} loading="lazy" className="w-full h-48 rounded-t-md" />
                 <div className="pt-3 ml-4 mr-2 mb-3">

@@ -1,5 +1,8 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef, useEffect, useContext } from "react"
 import { Link, NavLink } from "react-router-dom"
+import { toast } from 'react-toastify';
+import { AuthContext } from "../AuthProvider/AuthProvider";
+import userImg from "../assets/user.png"
 
 const ProfileDropDown = (props) => {
 
@@ -11,30 +14,34 @@ const ProfileDropDown = (props) => {
         { title: "Log out" }
     ]
 
+    const { user } = useContext(AuthContext);
 
     useEffect(() => {
         const handleDropDown = (e) => {
-            if (!profileRef.current.contains(e.target)) setState(false)
+            if (!profileRef?.current?.contains(e.target)) setState(false)
         }
         document.addEventListener('click', handleDropDown)
     }, [])
 
     return (
         <div className={` ${props.class} z-10`}>
-            <div className="flex items-center space-x-4">
-                <button ref={profileRef} className="w-10 h-10 outline-none rounded-full ring-offset-2 ring-gray-200 ring-2 lg:focus:ring-indigo-600"
-                    onClick={() => setState(!state)}
-                >
-                    <img
-                        src="https://randomuser.me/api/portraits/men/46.jpg"
-                        className="w-full h-full rounded-full"
-                    />
-                </button>
-                <div className="lg:hidden">
-                    <span className="block">Micheal John</span>
-                    <span className="block text-sm text-gray-500">john@gmail.com</span>
+            {
+                user &&
+                <div className="flex items-center gap-4">
+                    <div ref={profileRef} className="w-10 h-10 outline-none rounded-full ring-offset-2 ring-gray-200 ring-2 lg:focus:ring-indigo-600 cursor-pointer tooltip"  data-tip={user?.displayName || "User name not define"}
+                        onClick={() => setState(!state)} onMouseOver={() => console.log("tooltip")}
+                    >
+                        <img 
+                            src={user?.photoURL || userImg}
+                            className="w-full h-full rounded-full"
+                        />
+                    </div>
+                    <div className="lg:hidden">
+                        <span className="block">{user?.displayName || 'Name not found'}</span>
+                        <span className="block text-sm text-gray-500">{user?.email || 'Name not found'}</span>
+                    </div>
                 </div>
-            </div>
+            }
             <ul className={`bg-white top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
                 {
                     navigation.map((item, idx) => <li key={idx}>
@@ -50,6 +57,18 @@ const ProfileDropDown = (props) => {
 
 const NavBar = () => {
 
+    const { user, userSignOut } = useContext(AuthContext);
+
+    const handleSignOut = () => {
+        userSignOut()
+            .then(() => {
+                toast.success('User log out successfully');
+            })
+            .catch((error) => {
+                toast.error(error.message);
+            })
+    }
+
     const [menuState, setMenuState] = useState(false)
 
     const navigation = [
@@ -59,13 +78,13 @@ const NavBar = () => {
 
     return (
         <div>
-            <nav className="bg-[#F1FADA] border-b w-full">
-                <div className="flex items-center space-x-8 py-3 px-4 max-w-screen-xl mx-auto md:px-8">
+            <nav className="bg-[#F1FADA] border-b w-full fixed top-0 z-50 bg-opacity-80">
+                <div className="flex items-center space-x-8 py-6 px-4 max-w-screen-xl mx-auto md:px-8">
                     <div className="flex-none lg:flex-initial">
                         <button className="text-2xl md:text-3xl font-semibold">Second<span className="text-[#7bc4b0]">Home</span></button>
                     </div>
                     <div className="flex-1 z-50 flex items-center justify-between">
-                        <div className={`absolute bg-white lg:bg-transparent z-50 w-full top-16 lg:top-16 left-0 p-4 border-b lg:static lg:block lg:border-none ${menuState ? '' : 'hidden'}`}>
+                        <div className={`absolute bg-white lg:bg-transparent w-full top-16 lg:top-16 left-0 p-4 border-b lg:static lg:block lg:border-none ${menuState ? '' : 'hidden'}`}>
                             <ul className="mt-4 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0">
                                 {
                                     navigation.map((item, idx) => (
@@ -85,9 +104,13 @@ const NavBar = () => {
                             <ProfileDropDown
                                 class="hidden lg:block"
                             />
-                            <Link to="/login">
-                                <button className="btn bg-[#2D9596] text-white">Login</button>
-                            </Link>
+                            {
+                                user ?
+                                    <button onClick={handleSignOut} className="btn bg-[#2D9596] text-white">Log Out</button> :
+                                    <Link to="/login">
+                                        <button className="btn bg-[#2D9596] text-white">Login</button>
+                                    </Link>
+                            }
                             <button
                                 className="outline-none text-gray-400 block lg:hidden"
                                 onClick={() => setMenuState(!menuState)}

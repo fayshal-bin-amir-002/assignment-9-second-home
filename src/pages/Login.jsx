@@ -11,7 +11,7 @@ import git from "../assets/git.svg"
 
 const Login = () => {
 
-    const { userSignIn } = useContext(AuthContext);
+    const { userSignIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
     const navigate = useNavigate();
 
     const [show, setShow] = useState(false);
@@ -24,8 +24,7 @@ const Login = () => {
         const password = e.target.password.value;
 
         userSignIn(email, password)
-            .then((result) => {
-                console.log(result.user);
+            .then((result) => { console.log(result.user);
                 toast.success('User logged in successfully');
                 { location?.state ? navigate(location.state) : navigate('/') }
             })
@@ -34,8 +33,30 @@ const Login = () => {
             })
     }
 
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then((result) => { console.log(result.user);
+                toast.success('User logged in successfully');
+                { location?.state ? navigate(location.state) : navigate('/') }
+            })
+            .catch(() => {
+                toast.error("Something went wrong!");
+            })
+    }
+
+    const handleGitHubSignIn = () => {
+        gitHubSignIn()
+            .then((result) => { console.log(result.user);
+                toast.success('User logged in successfully');
+                { location?.state ? navigate(location.state) : navigate('/') }
+            })
+            .catch(() => {
+                toast.error("Something went wrong!");
+            })
+    }
+
     return (
-        <div className="flex justify-center mt-8 lg:mt-12 px-5">
+        <div className="flex justify-center my-8 lg:my-12 px-5">
             <Helmet>
                 <title>Second Home | Login</title>
             </Helmet>
@@ -60,9 +81,9 @@ const Login = () => {
                     </div>
                     <div className="divider my-8">OR</div>
                     <div className="w-[75%] mx-auto">
-                        <button className="btn btn-outline rounded-full w-full mb-2">
+                        <button onClick={handleGoogleSignIn} className="btn btn-outline rounded-full w-full mb-2">
                             <img src={google} className="w-8 mr-auto" /> <span className="mx-auto">Continue with Google</span></button>
-                        <button className="btn btn-outline rounded-full w-full mb-2">
+                        <button onClick={handleGitHubSignIn} className="btn btn-outline rounded-full w-full mb-2">
                             <img src={git} className="w-8 mr-auto" /> <span className="mx-auto">Continue with Github</span></button>
                     </div>
                 </div>

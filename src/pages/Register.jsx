@@ -28,7 +28,7 @@ const Register = () => {
             return;
         }
         if (!/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}$/.test(password)) {
-            setError("Password contain minimum one digit, uppercase and lowercase character!");
+            setError("Password should be contain minimum one digit, one uppercase and one lowercase character!");
             return;
         }
         if (password !== confirmPassword) {
@@ -37,18 +37,17 @@ const Register = () => {
         }
 
         userSignUp(email, password)
-            .then((result) => {
-                console.log(result.user);
+            .then(() => {
                 toast.success('User register successfully');
                 navigate("/");
             })
-            .catch((error) => {
+            .catch(() => {
                 toast.error(error.message);
             })
     }
 
     return (
-        <div className="flex justify-center mt-8 lg:mt-12 px-5">
+        <div className="flex justify-center my-8 lg:my-12 px-5">
             <Helmet>
                 <title>Second Home | Register</title>
             </Helmet>
@@ -70,7 +69,6 @@ const Register = () => {
                         <button className="btn w-full bg-[#2D9596] mb-5 text-white">Register</button>
                         <p className="font-medium text-center">Already have an account? <Link to="/login" className="text-[#9AD0C2] underline">Login</Link></p>
                     </div>
-                    <div className="divider my-8">OR</div>
                 </div>
             </form>
         </div>
