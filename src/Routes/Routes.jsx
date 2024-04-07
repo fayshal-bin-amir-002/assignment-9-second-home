@@ -4,12 +4,13 @@ import Home from "../pages/Home";
 import UpdatePropfile from "../pages/UpdatePropfile";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element: <MainLayout></MainLayout>,
-      errorElement: <p>No page found</p>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
           path: "/",
