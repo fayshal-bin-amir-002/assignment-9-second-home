@@ -1,9 +1,12 @@
 import { Outlet } from "react-router-dom";
+import NavBar from "../components/NavBar";
 
 const MainLayout = () => {
     return (
         <div className="font-poppins">
-            <p>this is main lay out</p>
+            <header className="h-[72px] lg:h-[85px]">
+                <NavBar></NavBar>
+            </header>
             <Outlet></Outlet>
         </div>
     );
