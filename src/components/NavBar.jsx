@@ -38,7 +38,7 @@ const ProfileDropDown = (props) => {
             <ul className={`bg-white top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
                 {
                     navigation.map((item, idx) => <li key={idx}>
-                        <button className="w-full text-gray-600 lg:hover:bg-gray-50 lg:p-2.5">
+                        <button className="text-gray-600 lg:hover:bg-gray-50 lg:p-2.5">
                             {item.title}
                         </button>
                     </li>)
@@ -66,7 +66,7 @@ const NavBar = () => {
                     </div>
                     <div className="flex-1 z-50 flex items-center justify-between">
                         <div className={`absolute bg-white lg:bg-transparent z-50 w-full top-16 lg:top-16 left-0 p-4 border-b lg:static lg:block lg:border-none ${menuState ? '' : 'hidden'}`}>
-                            <ul className="mt-12 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0">
+                            <ul className="mt-4 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0">
                                 {
                                     navigation.map((item, idx) => (
                                         <li key={idx} className="text-gray-600 text-lg font-medium hover:text-gray-900">

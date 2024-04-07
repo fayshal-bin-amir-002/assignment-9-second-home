@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.postimg.cc/y8N2F9pz/img1.jpg",
+        "estate_title": "Luxury Lakeside Retreat",
+        "segment_name": "Luxury",
+        "description": "Nestled amidst the tranquil beauty of Mountain Valley, our Luxury Lakeside Retreat offers an unparalleled escape from the ordinary. Perched on the shores of a pristine lake, this haven of opulence beckons discerning travelers seeking ultimate relaxation and indulgence. As you step into our elegant sanctuary, be greeted by breathtaking views that stretch as far as the eye can see, enveloping you in a sense of serenity and tranquility.Designed to cater to the most refined tastes, our retreat boasts world-class amenities and impeccable service. Whether you're lounging by the infinity pool overlooking the shimmering waters, rejuvenating your senses at our exclusive spa, or savoring gourmet delights at our fine dining restaurant, every moment here is crafted to elevate your experience to new heights of luxury.With spacious accommodations spanning over 3000 square feet, each room and suite is a sanctuary of comfort and sophistication, meticulously appointed with lavish furnishings and modern conveniences. Whether you're seeking a romantic getaway, a family vacation, or a corporate retreat, our retreat offers the perfect setting for unforgettable moments and cherished memories.",
+        "price": "500",
+        "status": "sale",
+        "area": "3000 sq ft",
+        "location": "Lakefront Drive, Mountain Valley",
+        "facilities": [
+            "lake view",
+            "swimming pool",
+            "spa",
+            "gourmet dining"
+        ]
+    },
+    {
+        "id": 2,
+        "img": "https://i.postimg.cc/DfS8dqcd/img2.jpg",
+        "estate_title": "Urban Chic Boutique Hotel",
+        "segment_name": "Boutique",
+        "description": "Immerse yourself in the vibrant pulse of the city at our Urban Chic Boutique Hotel, where contemporary elegance meets urban sophistication. Located in the heart of the bustling City Center, our boutique hotel is a stylish oasis amidst the energy of downtown life. From the moment you step into our sleek lobby, you'll be captivated by the modern design, chic ambiance, and personalized service that define our urban retreat.Each of our thoughtfully designed rooms and suites exudes an air of understated luxury, offering a sanctuary of comfort and style amidst the bustling cityscape. Whether you're unwinding with a cocktail at our rooftop bar, staying active in our state-of-the-art fitness center, or exploring the city's vibrant culture, every moment here is infused with the spirit of urban chic.With exclusive amenities such as concierge service, business center facilities, and gourmet dining options, we cater to the needs of discerning travelers seeking a seamless blend of luxury and convenience. Whether you're here for business or leisure, our boutique hotel promises a memorable stay filled with personalized experiences and unforgettable moments.",
+        "price": "300",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "Downtown Avenue, City Center",
+        "facilities": [
+            "rooftop bar",
+            "fitness center",
+            "concierge service",
+            "business center"
+        ]
+    },
+    {
+        "id": 3,
+        "img": "https://i.postimg.cc/Y2v47Jhw/img3.jpg",
+        "estate_title": "Seaside Resort Paradise",
+        "segment_name": "Resort",
+        "description": "Escape to a tropical paradise at our Seaside Resort, where sun-drenched beaches, crystal-clear waters, and lush landscapes await. Situated along the pristine coastline of Coastal Haven, our resort offers the perfect retreat for those seeking relaxation, adventure, and natural beauty. From the moment you arrive, you'll be swept away by the tranquil ambiance and warm hospitality that define our seaside sanctuary.Whether you're soaking up the sun on our private beach, lounging in a poolside cabana, or indulging in water sports and activities, there's no shortage of ways to unwind and enjoy the idyllic surroundings. For those seeking culinary delights, our resort offers an array of dining options, from casual beachside fare to gourmet cuisine prepared by world-class chefs.With spacious accommodations spanning over 4000 square feet, each room and suite is elegantly appointed with modern comforts and breathtaking views of the ocean. Whether you're here for a romantic getaway, a family vacation, or a destination wedding, our resort provides the perfect backdrop for unforgettable experiences and cherished memories.",
+        "price": "700",
+        "status": "rent",
+        "area": "4000 sq ft",
+        "location": "Beachfront Boulevard, Coastal Haven",
+        "facilities": [
+            "beach access",
+            "poolside cabanas",
+            "water sports",
+            "fine dining"
+        ]
+    },
+    {
+        "id": 4,
+        "img": "https://i.postimg.cc/4dWBcncy/img4.jpg",
+        "estate_title": "Mountain Retreat Lodge",
+        "segment_name": "Lodge",
+        "description": "Embrace the tranquility of nature at our Mountain Retreat Lodge, where rustic charm, outdoor adventure, and alpine beauty converge. Tucked away amidst the pristine wilderness of Wilderness Valley, our lodge offers a cozy haven for those seeking solace and serenity amidst majestic mountain landscapes. From the moment you arrive, you'll be greeted by the warm hospitality and rugged beauty that define our mountain retreat.Whether you're cozying up by the fireplace with a good book, exploring the scenic hiking trails, or simply savoring the crisp mountain air from your private outdoor seating area, every moment here is infused with the spirit of adventure and relaxation. For those seeking culinary delights, our lodge offers a continental breakfast to start your day off right.With spacious accommodations spanning over 2500 square feet, each room and suite is elegantly appointed with rustic furnishings and modern amenities, ensuring a comfortable and memorable stay. Whether you're here for a romantic getaway, a family vacation, or a wilderness retreat, our lodge provides the perfect setting for unforgettable experiences and cherished memories.",
+        "price": "250",
+        "status": "rent",
+        "area": "2500 sq ft",
+        "location": "Mountain Trail, Wilderness Valley",
+        "facilities": [
+            "fireplace",
+            "hiking trails",
+            "outdoor seating",
+            "continental breakfast"
+        ]
+    },
+    {
+        "id": 5,
+        "estate_title": "Historic Landmark Hotel",
+        "img": "https://i.postimg.cc/SshdX3xZ/img5.jpg",
+        "segment_name": "Heritage",
+        "description": "Step into a world of timeless elegance and historic grandeur at our Historic Landmark Hotel, nestled in the heart of Old Town. With its rich heritage, opulent architecture, and unparalleled service, our hotel offers a truly immersive experience for discerning travelers and history enthusiasts alike. From the moment you enter our majestic lobby adorned with ornate chandeliers and intricately carved furnishings, you'll be transported to a bygone era of refined luxury and sophistication.Each of our meticulously restored rooms and suites is a masterpiece of design and craftsmanship, blending period charm with modern amenities. Whether you're marveling at the architectural details of your surroundings, indulging in gourmet cuisine at our award-winning restaurant, or sipping cocktails in the elegant ambiance of our historic bar, every moment spent here is steeped in elegance and nostalgia.",
+        "price": "400",
+        "status": "sale",
+        "area": "3500 sq ft",
+        "location": "Heritage Street, Old Town",
+        "facilities": [
+            "ballroom events",
+            "afternoon tea",
+            "guided tours",
+            "valet parking"
+        ]
+    },
+    {
+        "id": 6,
+        "img": "https://i.postimg.cc/25PfJ4xp/img6.jpg",
+        "estate_title": "Ski Resort Chalet",
+        "segment_name": "Resort",
+        "description": "Experience the thrill of winter sports and the cozy comforts of home at our Ski Resort Chalet, nestled amidst the snow-capped peaks of Snowy Peaks. Perfectly situated for ski enthusiasts, our chalet offers unparalleled access to world-class slopes and breathtaking alpine vistas. Whether you're carving through fresh powder, unwinding in the hot tub after a day on the slopes, or indulging in gourmet dining at our slopeside restaurant, every moment here is filled with exhilaration and relaxation.With spacious accommodations spanning over 2800 square feet, each chalet combines rustic charm with modern amenities, providing a cozy retreat for families, groups, and couples alike. Whether you're seeking adventure on the mountain or simply seeking refuge from the cold, our ski resort chalet promises an unforgettable alpine getaway filled with memories to last a lifetime.",
+        "price": "600",
+        "status": "sale",
+        "area": "2800 sq ft",
+        "location": "Slopeside Avenue, Snowy Peaks",
+        "facilities": [
+            "ski-in/ski-out access",
+            "hot tub",
+            "après-ski lounge",
+            "gourmet dining"
+        ]
+    }
+]
