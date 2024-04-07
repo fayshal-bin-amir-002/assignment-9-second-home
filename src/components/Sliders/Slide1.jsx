@@ -10,7 +10,7 @@ const Slide1 = () => {
                 <div className="max-w-xl">
                     <h1 className="mb-5 text-4xl md:text-6xl font-bold animate__animated animate__fadeInDownBig">Welcome to Second<span className="text-[#7bc4b0]">Home</span></h1>
                     <p className="mb-5 opacity-80 animate__animated animate__fadeInUp animate__delay-1s">We are thrilled to have you as our guest and extend our warmest greetings to you.</p>
-                    <button className="btn bg-[#2D9596] text-white border-none animate__animated animate__fadeInUp animate__delay-2s">Lets Booking <FaArrowRight /></button>
+                    <button className="btn bg-[#2D9596] text-white border-none animate__animated animate__fadeInUp animate__delay-2s">Let&apos;s Booking <FaArrowRight /></button>
                 </div>
             </div>
         </div>

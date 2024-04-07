@@ -38,7 +38,7 @@ const ProfileDropDown = (props) => {
                     </div>
                     <div className="lg:hidden">
                         <span className="block">{user?.displayName || 'Name not found'}</span>
-                        <span className="block text-sm text-gray-500">{user?.email || 'Name not found'}</span>
+                        <span className="block text-sm text-gray-500">{user?.email || 'Email not found'}</span>
                     </div>
                 </div>
             }
