@@ -14,7 +14,7 @@ const UpdatePropfile = () => {
     const navigate = useNavigate();
 
 
-    const userEmail = user?.email || '';
+    const userEmail = user?.email || 'Not found';
 
     useEffect(() => {
         const userUrl = user?.photoURL || '';

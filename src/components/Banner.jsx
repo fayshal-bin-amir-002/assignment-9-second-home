@@ -14,7 +14,7 @@ const Banner = () => {
     const slides = [Slide1, Slide2, Slide3, Slide4];
 
     return (
-        <div className='flex justify-center items-center min-h-[calc(100vh-72px)] lg:min-h-[calc(100vh-85px)] -z-10'>
+        <div className='flex justify-center items-center min-h-[calc(100vh-96px)] lg:min-h-[calc(100vh-110px)]'>
             <Swiper navigation={true} loop={true} modules={[Navigation]} className="mySwiper w-full md:max-w-[90%]">
                 {
                     slides.map((slide, idx) => <SwiperSlide key={idx}>{slide}</SwiperSlide>)

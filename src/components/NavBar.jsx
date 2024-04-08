@@ -71,11 +71,11 @@ const NavBar = () => {
                         <button className="text-2xl md:text-3xl font-semibold">Second<span className="text-[#7bc4b0]">Home</span></button>
                     </div>
                     <div className="flex-1 z-50 flex items-center justify-between">
-                        <div className={`absolute bg-white lg:bg-transparent w-full top-16 lg:top-16 left-0 p-4 border-b lg:static lg:block lg:border-none ${menuState ? '' : 'hidden'}`}>
-                            <ul className="mt-4 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0 mx-auto max-w-max">
+                        <div className={`absolute bg-[#F1FADA] lg:bg-transparent w-full top-[96px] left-0 p-4 border-b lg:static lg:block lg:border-none ${menuState ? '' : 'hidden'}`}>
+                            <ul className="mt-4 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0 max-w-max">
                                 {
                                     navigation.map((item, idx) => (
-                                        <li key={idx} className="text-gray-600 text-lg font-medium hover:text-gray-900">
+                                        <li key={idx} className="text-gray-800 text-lg font-medium hover:text-gray-900">
                                             <NavLink to={item.path} className={({ isActive }) => isActive ? 'text-[#2D9596]' : ''}>
                                                 {item.title}
                                             </NavLink>
