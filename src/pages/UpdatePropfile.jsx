@@ -21,6 +21,7 @@ const UpdatePropfile = () => {
 
         const name = e.target.name.value || user.displayName;
         const photo_Url = e.target.photo.value || user.photoURL;
+
         console.log(name, photo_Url);
         updateUserProfile(name, photo_Url)
             .then(() => {
@@ -48,7 +49,7 @@ const UpdatePropfile = () => {
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">Name</label>
-                                <input name="name" type="text" placeholder="Name" className="w-full input input-bordered rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="name" type="text" placeholder="Name" className="w-full input text-black input-bordered rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">Email</label>
@@ -56,7 +57,7 @@ const UpdatePropfile = () => {
                             </div>
                             <div className="col-span-full">
                                 <label className="text-sm">Photo URL</label>
-                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full text-black rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
 
                         </div>

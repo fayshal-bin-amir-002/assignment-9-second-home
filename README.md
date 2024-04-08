@@ -1,8 +1,15 @@
-# React + Vite
+# Second Home
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[live link](https://react-second-home.netlify.app/)
 
-Currently, two official plugins are available:
+Features:
+* You can find luxury hotel and resorts.
+* We provide the best service and lowest price.
+* You can book and hotel and resort without any hassle.
+* We provide user friendly browsing and service
+* Detailed information about the hotels and resolt.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Npm packages: 
+1. Animate.css
+2. Swiperslider
+3. AOSPackage

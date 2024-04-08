@@ -27,7 +27,7 @@ const ProfileDropDown = (props) => {
                         onClick={() => setState(!state)}
                     >
                         <img 
-                            src={user?.photoURL || userImg}
+                            src={user?.photoURL ? user.photoURL : userImg}
                             className="w-full h-full rounded-full"
                         />
                     </div>
