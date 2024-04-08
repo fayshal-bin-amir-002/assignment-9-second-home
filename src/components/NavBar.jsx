@@ -59,19 +59,20 @@ const NavBar = () => {
 
     const navigation = [
         { title: "Home", path: "/" },
-        { title: "Update Profile", path: "/update-profile" }
+        { title: "Update Profile", path: "/update-profile" },
+        { title: "Booking", path: "/booking" }
     ]
 
     return (
         <div>
             <nav className="bg-[#F1FADA] border-b w-full fixed top-0 z-50 bg-opacity-80">
-                <div className="flex items-center space-x-8 py-6 px-4 max-w-screen-xl mx-auto md:px-8">
+                <div className="flex items-center justify-between space-x-8 py-6 px-4 max-w-screen-xl mx-auto md:px-8">
                     <div className="flex-none lg:flex-initial">
                         <button className="text-2xl md:text-3xl font-semibold">Second<span className="text-[#7bc4b0]">Home</span></button>
                     </div>
                     <div className="flex-1 z-50 flex items-center justify-between">
                         <div className={`absolute bg-white lg:bg-transparent w-full top-16 lg:top-16 left-0 p-4 border-b lg:static lg:block lg:border-none ${menuState ? '' : 'hidden'}`}>
-                            <ul className="mt-4 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0">
+                            <ul className="mt-4 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0 mx-auto max-w-max">
                                 {
                                     navigation.map((item, idx) => (
                                         <li key={idx} className="text-gray-600 text-lg font-medium hover:text-gray-900">

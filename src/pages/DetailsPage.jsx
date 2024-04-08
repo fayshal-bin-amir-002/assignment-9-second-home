@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { FaArrowRight } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
+import { saveToLocal } from "../utilities/localStorage";
 
 const DetailsPage = () => {
 
@@ -18,8 +19,13 @@ const DetailsPage = () => {
     }, []);
 
     const hotel = hotels.find((h) => h.id === parseInt(id));
-    
+
     const { img, estate_title, segment_name, description, price, status, area, location, facilities } = hotel || {};
+
+    const handleBooking = (item) => {
+        
+        saveToLocal(item);
+    }
 
     return (
         <div className="py-7 lg:py-14 min-h-[calc(100vh-408px)] md:min-h-[calc(100vh-326px)] flex justify-center px-5">
@@ -57,9 +63,7 @@ const DetailsPage = () => {
                                     <div className="divider my-3"></div>
                                 </div>
                                 <div className="text-right">
-                                    <Link>
-                                        <button className="btn bg-[#2D9596] text-white border-none">Book<FaArrowRight /></button>
-                                    </Link>
+                                    <button onClick={() => handleBooking(hotel)} className="btn bg-[#2D9596] text-white border-none">Book<FaArrowRight /></button>
                                 </div>
                             </div>
                         </div>
