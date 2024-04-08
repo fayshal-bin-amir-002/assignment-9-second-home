@@ -2,12 +2,13 @@ import PropTypes from 'prop-types';
 import { BsCurrencyDollar } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import 'aos/dist/aos.css';
+import { Link } from 'react-router-dom';
 AOS.init();
 
 const HotelCard = ({ card }) => {
 
-    const { img, estate_title, segment_name, description, price, status, area, location, facilities } = card;
+    const { id, img, estate_title, segment_name, description, price, status, area, location, facilities } = card;
 
     return (
         <div className="shadow-lg border rounded-md duration-300 hover:shadow-sm flex flex-col justify-between" data-aos="zoom-in" data-aos-duration="1000">
@@ -36,7 +37,9 @@ const HotelCard = ({ card }) => {
                 </div>
             </div>
             <div className='text-center'>
-                <button className='btn bg-[#2D9596] text-white w-[90%] mb-4'>View Details</button>
+                <Link to={`/details/${id}`}>
+                    <button className='btn bg-[#2D9596] text-white w-[90%] mb-4'>View Details</button>
+                </Link>
             </div>
         </div>
     );

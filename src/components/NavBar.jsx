@@ -9,11 +9,6 @@ const ProfileDropDown = (props) => {
     const [state, setState] = useState(false)
     const profileRef = useRef()
 
-    const navigation = [
-        { title: "Profile Settings" },
-        { title: "Log out" }
-    ]
-
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
@@ -29,7 +24,7 @@ const ProfileDropDown = (props) => {
                 user &&
                 <div className="flex items-center gap-4">
                     <div ref={profileRef} className="w-10 h-10 outline-none rounded-full ring-offset-2 ring-gray-200 ring-2 lg:focus:ring-indigo-600 cursor-pointer tooltip"  data-tip={user?.displayName || "User name not define"}
-                        onClick={() => setState(!state)} onMouseOver={() => console.log("tooltip")}
+                        onClick={() => setState(!state)}
                     >
                         <img 
                             src={user?.photoURL || userImg}
@@ -42,15 +37,6 @@ const ProfileDropDown = (props) => {
                     </div>
                 </div>
             }
-            <ul className={`bg-white top-12 right-0 mt-5 space-y-5 lg:absolute lg:border lg:rounded-md lg:text-sm lg:w-52 lg:shadow-md lg:space-y-0 lg:mt-0 ${state ? '' : 'lg:hidden'}`}>
-                {
-                    navigation.map((item, idx) => <li key={idx}>
-                        <button className="text-gray-600 lg:hover:bg-gray-50 lg:p-2.5">
-                            {item.title}
-                        </button>
-                    </li>)
-                }
-            </ul>
         </div>
     )
 }

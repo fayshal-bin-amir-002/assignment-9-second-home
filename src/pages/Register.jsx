@@ -9,7 +9,7 @@ import { IoMdEye, IoIosEyeOff } from "react-icons/io";
 const Register = () => {
 
     const navigate = useNavigate();
-    const { userSignUp } = useContext(AuthContext);
+    const { userSignUp, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState('');
 
     const [show, setShow] = useState(false);
@@ -17,6 +17,8 @@ const Register = () => {
 
     const handleSignUp = (e) => {
         e.preventDefault();
+        const name = e.target.name.value;
+        const photo_url = e.target.photo_url.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmPassword.value;
@@ -39,6 +41,13 @@ const Register = () => {
         userSignUp(email, password)
             .then(() => {
                 toast.success('User register successfully');
+                updateUserProfile(name, photo_url)
+                    .then(() => {
+
+                    })
+                    .catch(() => {
+                        toast.error(error.message);
+                    })
                 navigate("/");
             })
             .catch(() => {
@@ -55,7 +64,8 @@ const Register = () => {
                 <div className="w-full lg:w-[570px]">
                     <div className="border p-7 lg:p-14 rounded">
                         <h3 className="text-2xl font-bold  mb-6 lg:mb-12">Create an account</h3>
-                        <input type="text" placeholder="Name" className="mb-6 lg:mb-12 border-b w-full py-3 focus:outline-none placeholder:text-black placeholder:font-medium" />
+                        <input type="text" name="name" placeholder="Name" className="mb-6 lg:mb-12 border-b w-full py-3 focus:outline-none placeholder:text-black placeholder:font-medium" />
+                        <input type="text" name="photo_url" placeholder="Photo url" className="mb-6 lg:mb-12 border-b w-full py-3 focus:outline-none placeholder:text-black placeholder:font-medium" />
                         <input type="email" name="email" placeholder="Email" className="mb-6 lg:mb-12 border-b w-full py-3 focus:outline-none placeholder:text-black placeholder:font-medium" required />
                         <div className="relative">
                             <input type={show ? 'text' : 'password'} name="password" placeholder="Password" className="mb-6 border-b w-full py-3 focus:outline-none placeholder:text-black placeholder:font-medium" required />
