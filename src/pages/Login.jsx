@@ -35,7 +35,7 @@ const Login = () => {
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-            .then((result) => { console.log(result.user);
+            .then(() => {
                 toast.success('User logged in successfully');
                 { location?.state ? navigate(location.state) : navigate('/') }
             })
@@ -46,7 +46,7 @@ const Login = () => {
 
     const handleGitHubSignIn = () => {
         gitHubSignIn()
-            .then((result) => { console.log(result.user);
+            .then(() => {
                 toast.success('User logged in successfully');
                 { location?.state ? navigate(location.state) : navigate('/') }
             })

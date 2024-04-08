@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { toast } from 'react-toastify';
@@ -8,14 +8,25 @@ const UpdatePropfile = () => {
 
     const { user, updateUserProfile } = useContext(AuthContext);
 
+    const [name, setName] = useState('');
+    const [url, setUrl] = useState('');
+
     const navigate = useNavigate();
 
-    const email = user?.email || '';
+
+    const userEmail = user?.email || '';
+
+    useEffect(() => {
+        const userUrl = user?.photoURL || '';
+        const userName = user?.displayName || '';
+        setName(userName);
+        setUrl(userUrl);
+    }, [])
 
     const handleUpdate = (e) => {
         e.preventDefault();
 
-        if(e.target.name.value === '' && e.target.photo.value === '') {
+        if (e.target.name.value === '' && e.target.photo.value === '') {
             return toast.error("Fill the input!");
         }
 
@@ -49,15 +60,15 @@ const UpdatePropfile = () => {
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">Name</label>
-                                <input name="name" type="text" placeholder="Name" className="w-full input text-black input-bordered rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input name="name" value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Name" className="w-full input text-black input-bordered rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
                             <div className="col-span-full sm:col-span-3">
                                 <label className="text-sm">Email</label>
-                                <input type="email" defaultValue={email} placeholder="Email" className="input input-bordered w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" disabled />
+                                <input type="email" defaultValue={userEmail} placeholder="Email" className="input input-bordered w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" disabled />
                             </div>
                             <div className="col-span-full">
                                 <label className="text-sm">Photo URL</label>
-                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full text-black rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300" />
+                                <input type="text" value={url} onChange={(e) => setUrl(e.target.value)} name="photo" placeholder="Photo URL" className="input input-bordered w-full text-black rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
 
                         </div>
