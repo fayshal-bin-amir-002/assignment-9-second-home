@@ -5,6 +5,9 @@ import { FaArrowRight } from "react-icons/fa";
 import { BsCurrencyDollar } from "react-icons/bs";
 import { IoLocationOutline } from "react-icons/io5";
 import { saveToLocal } from "../utilities/localStorage";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 const DetailsPage = () => {
 
@@ -28,7 +31,7 @@ const DetailsPage = () => {
     }
 
     return (
-        <div className="py-7 lg:py-14 min-h-[calc(100vh-408px)] md:min-h-[calc(100vh-326px)] flex justify-center px-5">
+        <div className="py-7 lg:py-14 min-h-[calc(100vh-408px)] md:min-h-[calc(100vh-326px)] flex justify-center px-5" data-aos="zoom-in" data-aos-duration="1000">
             <Helmet>
                 <title>Second Home | Details</title>
             </Helmet>

@@ -6,6 +6,7 @@ const Booking = () => {
 
     const allBookingCard = getLocalData();
 
+
     if (allBookingCard.length === 0) {
         return (
             <div className="min-h-[calc(100vh-408px)] md:min-h-[calc(100vh-326px)] flex justify-center items-center">
@@ -21,7 +22,7 @@ const Booking = () => {
             </Helmet>
             <div className="space-y-4 lg:space-y-6 lg:w-[75%] mx-auto">
                 {
-                    allBookingCard.map((data) => <BookingCard key={data.id} card={data}></BookingCard>)
+                    allBookingCard.map((data, i) => <BookingCard key={data.id} card={data} ani_delay={i*500}></BookingCard>)
                 }
             </div>
         </div>

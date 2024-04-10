@@ -9,7 +9,7 @@ import { IoMdEye, IoIosEyeOff } from "react-icons/io";
 const Register = () => {
 
     const navigate = useNavigate();
-    const { userSignUp, updateUserProfile } = useContext(AuthContext);
+    const { userSignUp, updateUserProfile, userSignOut } = useContext(AuthContext);
     const [error, setError] = useState('');
 
     const [show, setShow] = useState(false);
@@ -43,12 +43,17 @@ const Register = () => {
                 toast.success('User register successfully');
                 updateUserProfile(name, photo_url)
                     .then(() => {
+                        userSignOut()
+                            .then(() => {
+                                navigate("/login");
+                            })
+                            .catch(() => {
 
+                            })
                     })
                     .catch(() => {
                         toast.error(error.message);
                     })
-                navigate("/");
             })
             .catch(() => {
                 toast.error(error.message);

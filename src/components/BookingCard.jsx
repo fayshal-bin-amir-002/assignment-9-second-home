@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
-const BookingCard = ({ card }) => {
+const BookingCard = ({ card, ani_delay }) => { console.log(ani_delay);
 
     const { id, img, estate_title, segment_name, description } = card;
 
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+        <div className="card lg:card-side bg-base-100 shadow-xl" data-aos="fade-right" data-aos-duration="1000" data-aos-delay={ani_delay}>
             <figure className='lg:w-[50%]'><img src={img} alt="Album" className='h-full' /></figure>
             <div className="card-body">
                 <h2 className="card-title text-2xl">{estate_title}</h2>
@@ -23,7 +26,8 @@ const BookingCard = ({ card }) => {
 };
 
 BookingCard.propTypes = {
-    card: PropTypes.object.isRequired
+    card: PropTypes.object.isRequired,
+    ani_delay: PropTypes.number.isRequired
 };
 
 export default BookingCard;
