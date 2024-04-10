@@ -24,7 +24,7 @@ const Login = () => {
         const password = e.target.password.value;
 
         userSignIn(email, password)
-            .then(() => {
+            .then(() => { 
                 toast.success('User logged in successfully');
                 { location?.state ? navigate(location.state) : navigate('/') }
             })

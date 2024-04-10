@@ -4,7 +4,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 AOS.init();
 
-const BookingCard = ({ card, ani_delay }) => { console.log(ani_delay);
+const BookingCard = ({ card, ani_delay }) => {
 
     const { id, img, estate_title, segment_name, description } = card;
 
