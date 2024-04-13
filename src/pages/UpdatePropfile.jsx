@@ -58,11 +58,11 @@ const UpdatePropfile = () => {
                             <p className="text-xs">You can update your user name and photo url</p>
                         </div>
                         <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">
-                            <div className="col-span-full sm:col-span-3">
+                            <div className="col-span-full lg:col-span-3">
                                 <label className="text-sm">Name</label>
                                 <input name="name" value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Name" className="w-full input text-black input-bordered rounded-md focus:ring focus:ring-opacity-75 focus:dark:ring-violet-600 dark:border-gray-300" />
                             </div>
-                            <div className="col-span-full sm:col-span-3">
+                            <div className="col-span-full lg:col-span-3">
                                 <label className="text-sm">Email</label>
                                 <input type="email" defaultValue={userEmail} placeholder="Email" className="input input-bordered w-full rounded-md focus:ring focus:ring-opacity-75 dark:text-gray-50 focus:dark:ring-violet-600 dark:border-gray-300" disabled />
                             </div>
